@@ -1,17 +1,14 @@
 const express = require('express');
-
+const { getHomepage, getGigachad, getTheZucc } = require('../controllers/homeController');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Hello World! and hello Dat')
-})
+// router.Method('/routes',handler)
 
-router.get('/dat', (req, res) => {
-    res.send('Gigachad')
-})
+router.get('/', getHomepage);
 
-router.get('/routetest', (req, res) => {
-    res.render('sample.ejs')
-})
+
+router.get('/dat', getGigachad);
+
+router.get('/routetest', getTheZucc);
 
 module.exports = router;
