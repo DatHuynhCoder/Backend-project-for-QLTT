@@ -1,0 +1,1 @@
+i use preference->setting-> format on save: everytime Ctrl + S the code formatted
