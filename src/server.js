@@ -3,8 +3,7 @@ const express = require('express')
 const path = require('path');
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web.js');
-
-const mysql = require('mysql2');
+const connection = require('./config/database');
 
 //use env
 
@@ -19,14 +18,6 @@ configViewEngine(app);
 app.use('/', webRoutes);
 
 //test conection
-//create the connection to database
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3307, //default: 3306
-    user: 'root', //default: empty
-    password: '123456',
-    database: 'dathuynh'
-});
 
 //simple querry
 connection.query(
